@@ -16,7 +16,7 @@ function handleWindowOffline(){
     alert("인터넷 연결 안됨")
 }
 function handleWindowOnline(){
-    alert("인터넷 연결 완료")
+    alert("인터넷 연결  어쩌라고")
 }
 
 
