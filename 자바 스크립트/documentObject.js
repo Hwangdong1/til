@@ -16,7 +16,7 @@ function handleWindowOffline(){
     alert("인터넷 연결 안됨")
 }
 function handleWindowOnline(){
-    alert("인터넷 연결  어쩌라고 황길성 멍청이")
+    alert("인터넷 연결  어쩌라고 황길성 멍청이 제발좀 되라")
 }
 
 
