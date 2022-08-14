@@ -1,26 +1,29 @@
-const loginForm = document.querySelector("#login-form")
-const loginInput = document.querySelector("#login-form input")
-const greeting = document.querySelector("#greeting")
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-const HIDDEN_CLASSNAME = "hidden"
-const USERNAME_KEY = "userName"
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "userName";
 
-function onLoginSubmit (event){
-    event.preventDefault()
-    const userName = loginInput.value
-    loginForm.classList.add("hidden")
-    console.log(USERNAME_KEY)
-    localStorage.setItem("userName", USERNAME_KEY)
-    greeting.innerText = "Hello " + USERNAME_KEY
-    greeting.classList.remove("hidden")
+function onLoginSubmit(event) {
+  event.preventDefault();
+  const username = loginInput.value;
+  loginForm.classList.add("hidden");
+  console.log(USERNAME_KEY);
+  console.log(username);
+  localStorage.setItem(USERNAME_KEY, username);
+  greeting.innerText = "Hello " + username;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-loginForm.addEventListener("submit", onLoginSubmit) 
+loginForm.addEventListener("submit", onLoginSubmit);
 
-const saveUserName = localStorage.getItem(USERNAME_KEY)
+const saveUserName = localStorage.getItem(USERNAME_KEY);
 
 if (saveUserName === null) {
-    loginForm.classList.remove(HIDDEN_CLASSNAME)
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", onLoginSubmit);
 } else {
-    greeting.classList.remove(HIDDEN_CLASSNAME)
+  greeting.innerText = "Hello " + saveUserName;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 }
